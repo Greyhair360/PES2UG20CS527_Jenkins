@@ -1,13 +1,13 @@
 pipeline {
   agent any 
   stages { 
-    stage('Build') { 
+    stage(Build) { 
       steps {
         sh 'mvn clean install'
         echo 'Build Stage Successful'
       }
     }
-    stage('Test') {
+    stage(Test) {
       steps {
         sh 'mvn test'
         echo 'Test Stage Successful'
@@ -18,7 +18,7 @@ pipeline {
         }
       }
     }
-    stage('Deploy') {
+    stage(Deploy) {
       steps {
         sh 'mvn deploy'
         echo 'Deployment Successful'
